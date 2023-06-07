@@ -1,0 +1,228 @@
+body {
+    min-height: 150vh;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ----- header ----- */
+.header {
+    border-bottom: 1px solid #ddd;
+}
+
+.header .inner {
+    display: flex;
+    /* align-items: center; */
+    height: 100px;
+    line-height: 100px;
+}
+
+.header a {
+    display: block;
+}
+
+.header a img {
+    width: 100px;
+}
+
+.header .gnb {
+    margin: 0 0 0 auto;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .service {
+    margin: 0 0 0 50px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .sub {
+    /* 원래 position 뒤에 display가 위치함.
+    다단메뉴 할 때는 예외. */
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+
+    transition: 0.5s;
+}
+
+/* header01에서 hover 위치 조정으로 다단 메뉴 전체 나오게 하기 */
+.header .gnb:hover>ul>li .sub {
+    height: 200px;
+}
+
+.header .gnb {
+    /* position: relative; */
+}
+
+
+
+
+.header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    z-index: 999;
+
+    transition: 0.5s;
+}
+
+.header .gnb:hover::before {
+    height: 200px;
+}
+
+
+
+/* ----- main_slide ----- */
+
+
+
+
+
+/* ----- main project ----- */
+/*section 2*/
+
+
+
+
+
+
+/* footer */
+.footer {
+    background: #444;
+    color: #fff;
+}
+
+.footer .ft {
+    border-bottom: 1px solid #666;
+}
+
+.footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.footer .content ul {
+    display: flex;
+    align-items: center;
+}
+
+.footer .content li strong {
+    font-weight: 500;
+}
+
+.footer .content .customer li~Li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: #ccc;
+    margin: 0 15px;
+}
+
+.footer address {
+    font-style: normal;
+}
+
+.footer .sns {
+    gap: 4px;
+}
+
+.footer .link {
+    gap: 10px;
+}
+
+#fl {
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    background: #369;
+    color: #fff;
+}
+
+.family_link2 {
+    position: relative;
+}
+
+.family_link2 span {
+    display: block;
+    width: 150px;
+    line-height: 30px;
+    padding: 0 15px;
+
+    border: 1px solid #ddd;
+    background: #333;
+    color: #fff;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.family_link2 span i {
+    float: right;
+    line-height: 30px;
+}
+
+.family_link2 span.on i {
+    transform: rotate(180deg);
+}
+
+.family_link2 .fl2 ul {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    background: #333;
+    color: #fff;
+    border: 1px solid #ddd;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.family_link2 .fl2 ul.on {
+    display: flex;
+}
+
+.family_link2 .fl2 ul a {
+    display: block;
+    line-height: 30px;
+    padding: 0 15px;
+}
+
+.family_link2 .fl2 ul li~li {
+    border-top: 1px solid #ddd;
+}
+
+.footer .sns i {
+    padding: 5px;
+    font-size: 20px;
+    background: #222;
+    line-height: 29px;
+}
