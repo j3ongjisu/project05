@@ -1,3 +1,7 @@
+* {
+    outline: 1px solid;
+}
+
 body {
     min-height: 150vh;
 }
@@ -11,6 +15,7 @@ body {
 /* ----- header ----- */
 .header {
     border-bottom: 1px solid #ddd;
+
 }
 
 .header .inner {
@@ -58,7 +63,7 @@ body {
     z-index: 999;
 
     text-align: center;
-    width: 100%;
+    width: 150%;
     line-height: 40px;
 
     transition: 0.5s;
@@ -88,6 +93,7 @@ body {
     z-index: 999;
 
     transition: 0.5s;
+
 }
 
 .header .gnb:hover::before {
@@ -96,14 +102,346 @@ body {
 
 
 
-/* ----- main_slide ----- */
+/* ---------- main_slide ---------- */
+.main_visual {
+    position: relative;
+    height: calc(100vh - 101px);
+    overflow: hidden;
+    color: #fff;
+}
+
+.main_visual .itm {
+    position: relative;
+    min-height: 1000px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 130%;
+}
+
+.main_visual .itm.on {
+    background-size: auto 100%;
+    transition: 4s;
+}
+
+.main_visual .itm .inner {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(0, -50%);
+    margin: 0 0 0 -604px;
+}
+
+.main_visual .itm01 {
+    background-image: url(../images/main01.jpg);
+}
+
+.main_visual .itm02 {
+    background-image: url(../images/main02.jpg);
+}
+
+.main_visual .itm03 {
+    background-image: url(../images/main03.jpg);
+}
+
+.main_visual .itm04 {
+    background-image: url(../images/main04.jpg);
+}
+
+.main_visual .itm05 {
+    background-image: url(../images/main05.jpg);
+}
+
+.main_visual .itm h3 {
+    font-size: 50px;
+    /* white-space: nowrap; */
+    color: #fff;
+    margin: 0 0 20px 0;
+
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
+.main_visual .itm.on h3 {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main_visual .itm p {
+    width: 350px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 21px;
+    margin: 0 0 30px 0;
+
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
+.main_visual .itm.on p {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_visual .itm .btn {
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
+.main_visual .itm.on .btn {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+.main_visual .itm02 h3 {
+    color: #333;
+}
+
+.main_visual .itm02 p {
+    color: #333;
+}
+
+
+.main_visual .menu {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+
+    transform: translate(0, 0);
+    margin: 0 0 0 -700px;
+    padding: 0 15px;
+}
+
+.main_visual .menu li {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.main_visual .menu li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main_visual .menu li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.main_visual .menu li.on::after {
+    width: 100%;
+    transition: 4s;
+}
+
+.main_visual .menu li a {
+    display: block;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.main_visual .menu li.on a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.main_visual .arrows {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    display: flex;
+
+    transform: translate(-50%, -50%);
+    padding: 0 15px;
+    gap: 1500px;
+    justify-content: space-between;
+}
+
+
+/* 스크롤 아래로 내리는 버튼 만들기 */
+.main_visual .scr {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+
+    transform: translate(-100%, 0);
+    margin: 0 0 0 700px;
+    padding: 0 15px;
+
+    color: #fff;
+}
+
+.main_visual .slide_num {
+    position: absolute;
+    left: 45%;
+    top: 100px;
+
+    font-weight: 500;
+    transform: translate(-100%, 0);
+    margin: 0 0 0 700px;
+    padding: 0 15px;
+
+    color: #ff5e37;
+}
+
+.main_visual .scr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 24px;
+    height: 40px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.main_visual .scr::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 26px;
+    width: 2px;
+    height: 10px;
+    background: #333;
+    border-radius: 1px;
+    animation: wheel 0.5s infinite;
+}
+
+@keyframes wheel {
+    0% {
+        transform: translate(0, 0);
+    }
+
+
+
+    100% {
+        transform: translate(0, 5px);
+    }
+
+
+}
+
+.main_visual .scr span {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    white-space: nowrap;
+    font-size: 14px;
+    text-transform: uppercase;
+    transform: translate(calc(-100% - 20px), 0);
+}
+
+
+
+
+.main_visual .arrows i {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main_visual .arrows i:hover {
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+}
 
 
 
 
 
-/* ----- main project ----- */
+
+
+
+
+
+/* ---------- main project ---------- */
 /*section 2*/
+.main_product {
+    padding: 100px 0;
+}
+
+.main_product .title {
+    padding: 0 15px;
+    text-align: center;
+}
+
+.main_product .title h2 {
+    margin: 0 0 30px 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ff5e37;
+}
+
+.main_product .con {
+    padding: 0 15px;
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid #999; */
+}
+
+.main_product .con .prd {
+    height: 600px;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.main_product .con .prd .prd_img {
+    overflow: hidden;
+}
+
+.main_product .con .prd img {
+    transition: 0.6s;
+}
+
+.main_product .con .prd:hover img {
+    transform: scale(1.1);
+}
+
+.main_product .con .prd .prd_brand {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.main_product .con .prd .prd_name {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #000;
+}
+
+.main_product .con .prd .prd_price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000
+}
+
+
+
+
+
 
 
 
@@ -221,8 +559,8 @@ body {
 }
 
 .footer .sns i {
-    padding: 5px;
+    padding: 7px;
     font-size: 20px;
     background: #222;
-    line-height: 29px;
+    line-height: 20px;
 }
