@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>과제5</title>
+    <title>EIDER</title>
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/font.css">
@@ -34,7 +34,7 @@
                 </h1>
                 <nav class="gnb">
                     <ul>
-                        <li><a href="">BRAND</a>
+                        <li><a href="" class="sub_menu">BRAND</a>
                             <ul class="sub">
                                 <li><a href="">FILM</a></li>
                                 <li><a href="">LINE</a></li>
@@ -42,7 +42,7 @@
                                 <li><a href="">EIDERIS</a></li>
                             </ul>
                         </li>
-                        <li><a href="">CATEGORY</a>
+                        <li><a href="" class="sub_menu">CATEGORY</a>
                             <ul class="sub">
                                 <li><a href="">아우터</a></li>
                                 <li><a href="">상의</a></li>
@@ -50,7 +50,7 @@
                                 <li><a href="">신발</a></li>
                             </ul>
                         </li>
-                        <li><a href="">KIDS</a>
+                        <li><a href="" class="sub_menu">KIDS</a>
                             <ul class="sub">
                                 <li><a href="">자켓</a></li>
                                 <li><a href="">티셔츠</a></li>
@@ -61,9 +61,9 @@
                     </ul>
                 </nav>
                 <div class="service">
-                    <i class="xi-bars"></i>
-                    <i class="xi-search"></i>
                     <i class="xi-heart"></i>
+                    <i class="xi-search"></i>
+                    <i class="xi-bars"></i>
                 </div>
             </div>
 
@@ -118,22 +118,21 @@
 
                 </div>
 
-
                 <ul class="menu">
                     <li>
-                        <a href="#slide1">01</a>
+                        <a href="#slide1"></a>
                     </li>
                     <li>
-                        <a href="#slide2">02</a>
+                        <a href="#slide2"></a>
                     </li>
                     <li>
-                        <a href="#slide3">03</a>
+                        <a href="#slide3"></a>
                     </li>
                     <li>
-                        <a href="#slide4">04</a>
+                        <a href="#slide4"></a>
                     </li>
                     <li>
-                        <a href="#slide5">05</a>
+                        <a href="#slide5"></a>
                     </li>
                 </ul>
 
@@ -151,7 +150,7 @@
 
                 <!--스크롤 아래로 내리는 버튼 만들기-->
                 <a href="#down" class="scr">
-                    <span>scroll down</span>
+                    <span>scroll</span>
                 </a>
             </section>
 
@@ -166,10 +165,16 @@
                 <div class="inner con">
 
                     <!-- 사진 1 -->
-                    <div class="prd">
-                        <div class="prd_img">
-                            <img src="./images/itm01.jpg" alt="">
-                        </div>
+                    <div class="prd" data-aos="fade-up" data-aos-delay="300">
+                        <figure>
+                            <div class="prd_img">
+                                <span>1</span>
+                                <img src="./images/itm01.jpg" alt="">
+                            </div>
+                            <div class="btn">
+                                <i class="xi-cart"></i>
+                            </div>
+                        </figure>
                         <div class="prd_info">
                             <p class="prd_brand">eider</p>
                             <p class="prd_name">POP 와플 여성 긴팔 짚업 티셔츠 (White)</p>
@@ -178,10 +183,16 @@
                     </div>
 
                     <!-- 사진 2 -->
-                    <div class="prd">
-                        <div class="prd_img">
-                            <img src="./images/itm02.jpg" alt="">
-                        </div>
+                    <div class="prd" data-aos="fade-up" data-aos-delay="300">
+                        <figure>
+                            <div class="prd_img">
+                                <span>2</span>
+                                <img src="./images/itm02.jpg" alt="">
+                            </div>
+                            <div class="btn">
+                                <i class="xi-cart"></i>
+                            </div>
+                        </figure>
                         <div class="prd_info">
                             <p class="prd_brand">eider</p>
                             <p class="prd_name">ON THE ROCK (온더락) 남성 카고 조거 팬츠 (C/Grey)</p>
@@ -190,10 +201,16 @@
                     </div>
 
                     <!-- 사진 3 -->
-                    <div class="prd">
-                        <div class="prd_img">
-                            <img src="./images/itm04.jpg" alt="">
-                        </div>
+                    <div class="prd" data-aos="fade-up" data-aos-delay="300">
+                        <figure>
+                            <div class="prd_img">
+                                <span>3</span>
+                                <img src="./images/itm04.jpg" alt="">
+                            </div>
+                            <div class="btn">
+                                <i class="xi-cart"></i>
+                            </div>
+                        </figure>
                         <div class="prd_info">
                             <p class="prd_brand">eider</p>
                             <p class="prd_name">퀀텀 에어로 하이크 (Orange)</p>
@@ -214,17 +231,17 @@
                 <div class="inner content">
 
                     <ul class="customer">
-                        <li><a href="">회사소개
+                        <li><a href="">고객센터
                             </a></li>
                         <li><a href="">이용약관
                             </a></li>
                         <li><a href=""><strong>
                                     개인정보처리방침
                                 </strong></a></li>
-                        <li><a href="">이메일무단수집거부
+                        <li><a href="">회사소개
                             </a></li>
-                        <li><a href="">사이버감사실</a></li>
-                        <li><a href="">위치정보이용약관</a></li>
+                        <li><a href="">쇼핑몰 입점</a></li>
+                        <li><a href="">매장안내</a></li>
                     </ul>
 
                     <ul class="sns">
@@ -239,11 +256,10 @@
                 <div class="inner content">
                     <address>
                         <ul class="link">
-                            <li><a href="tel:051-783-2317">전화번호 : 051-783-2317</a></li>
-                            <li> <a href="mailto:sipossa@naver.com">이메일 : sipossa@naver.com</a> </li>
-                            <li> Graff France Headquarters 237 rue Saint-Honore
-                                Paris 75001</li>
-                            <li> &copy; Graff</li>
+                            <li><a href="tel:1533-1631">쇼핑몰 고객센터 : 1533-1631</a></li>
+                            <li> <a href="tel:1533-1631">K2코리아그룹 고객센터 : 1644-7781</a> </li>
+                            <li> 서울시 성동구 아차산로 11가길 3, 2층</li>
+                            <li> &copy; 2022 The K-connect Co.,Ltd ALL RIGHTS RESERVED.</li>
                         </ul>
                     </address>
                     <div class="family_link">
@@ -254,19 +270,15 @@
                             <option value="http://google.com">구글</option>
                         </select>
                     </div>
-                    <div class="family_link2">
-                        <div class="fl2">
-                            <span>패밀리링크 <i class="xi-angle-up"></i></span>
-                            <ul>
-                                <li><a href="http://naver.com" target="_blank">네이버</a></li>
-                                <li><a href="http://daum.com" target="_blank">다음</a></li>
-                                <li><a href="http://google.com" target="_blank">구글</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </footer>
+
+        <div class="to_top">
+            <i class="xi-arrow-top"></i>
+        </div>
+
     </div>
 
 

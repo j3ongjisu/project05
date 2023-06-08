@@ -6,6 +6,21 @@ $(function () {
     });
 
 
+    $(window).on('scroll', function () {
+        // 변수에 스크롤한 양을 담는다.
+        let sct = $(window).scrollTop();
+        console.log(sct)
+        if (sct > 0) {
+            $('.header').addClass('on')
+        } else {
+            $('.header').removeClass('on')
+        }
+
+    })
+
+
+
+
     $('.family_link2 span').on('click', function () {
         $(this).toggleClass('on');
         $(this).next().toggleClass('on');
@@ -49,5 +64,29 @@ $(function () {
         $('.main_slide').slick('slickGoTo', idx);
     })
 
+
+    //메인 슬라이드 스크롤 아래 버튼
+    $('.scr').on('click', function (e) {
+        e.preventDefault();
+        const st = $(this.hash).offset().top;
+        console.log(st);
+        $('html, body').animate({ scrollTop: st }, 600)
+    });
+
+
+
+
+    //to_top
+    //to_top 스크롤 위로 올리기
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 600)
+    });
+
+    // to_top 스크롤 숨겼다가 나타내기
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        // sct > 1000 ? $('.to_top').fadeIn(1000) : $('.to_top').fadeOut();
+        sct > 500 ? $('.to_top').addClass('on') : $('.to_top').removeClass('on');
+    });
 
 });
