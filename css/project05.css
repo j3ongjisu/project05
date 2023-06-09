@@ -222,9 +222,10 @@ body {
     transition: 0.5s 1s;
 }
 
-.main_visual .itm.on .btn i {
+/* 화살표 가운데로 배치 다시 하기 */
+/* .main_visual .itm .xi-arrow-right {
     vertical-align: middle
-}
+} */
 
 .main_visual .itm01 h3 {
     color: #555;
