@@ -203,14 +203,27 @@ body {
 }
 
 .main_visual .itm .btn {
+    padding: 5px 20px 5px 20px;
+    border: 1px solid #fff;
     transform: translate(0, 100px);
     opacity: 0;
+}
+
+
+
+.main_visual .itm .black {
+    border: 1px solid #555;
+
 }
 
 .main_visual .itm.on .btn {
     transform: translate(0, 0);
     opacity: 1;
     transition: 0.5s 1s;
+}
+
+.main_visual .itm.on .btn i {
+    vertical-align: middle
 }
 
 .main_visual .itm01 h3 {
