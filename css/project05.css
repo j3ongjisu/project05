@@ -16,16 +16,18 @@ body {
     left: 0;
     right: 0;
     z-index: 999;
+    transition: 0.6s;
+
 }
 
 .header:hover {
     background: #fff;
     border-bottom: 1px solid #ddd;
-
 }
 
 .header.on {
     background: #fff;
+    border-bottom: 1px solid rgb(221, 221, 221, 0.3)
 }
 
 .header .inner {
@@ -50,6 +52,15 @@ body {
 .header .gnb>ul {
     display: flex;
     gap: 40px;
+    color: #fff;
+}
+
+.header:hover .gnb>ul {
+    color: #444;
+}
+
+.header.on .gnb>ul {
+    color: #444;
 }
 
 .header .service {
@@ -57,12 +68,20 @@ body {
     font-size: 20px;
 }
 
-.header .service .xi-heart {
+.header .service .xi-heart,
+.header:hover .service .xi-heart,
+.header.on .service .xi-heart {
     color: #ff5e37;
 }
 
 .header .service i {
     margin: 0 0 0 5px;
+    color: #fff;
+}
+
+.header:hover .service i,
+.header.on .service i {
+    color: #444;
 }
 
 .header .gnb>ul>li {
@@ -74,19 +93,16 @@ body {
     다단메뉴 할 때는 예외. */
     height: 0;
     overflow: hidden;
-
     position: absolute;
     top: 110px;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 999;
-
     font-size: 14px;
     text-align: center;
     width: 150%;
     line-height: 40px;
-
-    transition: 0.2s;
+    transition: 0.5s;
 }
 
 /* header01에서 hover 위치 조정으로 다단 메뉴 전체 나오게 하기 */
@@ -104,9 +120,7 @@ body {
     /* border-top: 1px solid #ddd; */
     background: #fff;
     z-index: 999;
-
-    transition: 0.2s;
-
+    transition: 0.5s;
 }
 
 .header .gnb:hover::before {
@@ -140,7 +154,7 @@ body {
 
 .main_visual .itm .inner {
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(0, -50%);
     margin: 0 0 0 -600px;
@@ -162,8 +176,36 @@ body {
     background-image: url(../images/main04.jpg);
 }
 
+.main_visual .itm04 .content strong,
+.main_visual .itm04 .content h3,
+.main_visual .itm04 .content p,
+.main_visual .itm04 .content .btn {
+    color: #444;
+}
+
+.main_visual .itm04 .content .btn {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.main_visual .itm04.on .content .btn {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.15);
+}
+
 .main_visual .itm05 {
     background-image: url(../images/main05.jpg);
+}
+
+.main_visual .itm strong {
+    display: block;
+    font-size: 30px;
+    opacity: 0;
+}
+
+.main_visual .itm.on strong {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .main_visual .itm h3 {
@@ -172,13 +214,13 @@ body {
     font-weight: 500;
     /* white-space: nowrap; */
     color: #fff;
-    margin: 0 0 20px 0;
-    transform: translate(0, 100px);
+    margin: 0 0 32px 0;
+    /* transform: translate(0, 100px); */
     opacity: 0;
 }
 
 .main_visual .itm.on h3 {
-    transform: translate(0, 0);
+    /* transform: translate(0, 0); */
     opacity: 1;
     transition: 0.5s;
 }
@@ -191,73 +233,39 @@ body {
     line-height: 21px;
     margin: 0 0 40px 0;
 
-    transform: translate(0, 100px);
+    /* transform: translate(0, 100px); */
     opacity: 0;
 }
 
 .main_visual .itm.on p {
     width: 500px;
-    transform: translate(0, 0);
+    /* transform: translate(0, 0); */
     opacity: 1;
-    transition: 0.5s 0.5s;
+    transition: 0.5s;
 }
 
 .main_visual .itm .btn {
-    padding: 5px 20px 5px 20px;
+    padding: 5px 20px 5px 24px;
     border: 1px solid #fff;
+    border-radius: 5px;
     transform: translate(0, 100px);
     opacity: 0;
 }
 
 
-
-.main_visual .itm .black {
-    border: 1px solid #555;
-
-}
-
 .main_visual .itm.on .btn {
     transform: translate(0, 0);
     opacity: 1;
-    transition: 0.5s 1s;
+    transition: 0.5s;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* 화살표 가운데로 배치 다시 하기 */
-/* .main_visual .itm .xi-arrow-right {
-    vertical-align: middle
-} */
-
-.main_visual .itm01 h3 {
-    color: #555;
+.main_visual .itm .xi-arrow-right {
+    vertical-align: bottom;
+    margin: 0 0 0 5px;
 }
 
-.main_visual .itm01 p {
-    color: #555;
-}
-
-.main_visual .itm01 a {
-    color: #555;
-}
-
-.main_visual .itm02 h3 {
-    color: #fff;
-}
-
-.main_visual .itm02 p {
-    color: #fff;
-}
-
-.main_visual .itm03 h3 {
-    color: #555;
-}
-
-.main_visual .itm03 p {
-    color: #555;
-}
-
-.main_visual .itm03 a {
-    color: #555;
-}
 
 .main_visual .menu {
     position: absolute;
@@ -284,7 +292,9 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    transform: skew(-45deg);
 }
 
 .main_visual .menu li::after {
@@ -295,11 +305,11 @@ body {
     width: 0;
     height: 4px;
     background: rgba(255, 94, 55, 1);
+    transform: skew(-45deg);
 }
 
 .main_visual .menu li.on::after {
     width: 100%;
-    transition: 5s;
 }
 
 .main_visual .menu li a {
@@ -312,42 +322,38 @@ body {
 }
 
 .main_visual .arrows {
+    display: flex;
     position: absolute;
+    padding: 0 15px;
     left: 50%;
     top: 50%;
-
-    display: flex;
-
     transform: translate(-50%, -50%);
-    padding: 0 15px;
-    gap: 1500px;
     justify-content: space-between;
+    gap: 1500px;
 }
 
 
 /* 스크롤 아래로 내리는 버튼 만들기 */
 .main_visual .scr {
     position: absolute;
+    padding: 0 15px;
     left: 50%;
     bottom: 100px;
-    padding: 0 15px;
     transform: translate(-50%, -50%);
     font-weight: 300;
-    color: #ff5e37
+    color: #ff5e37;
 }
 
 .main_visual .slide_num {
     position: absolute;
-    left: 23%;
-    top: 820px;
-
-    font-size: 20px;
-    font-weight: 500;
-    transform: translate(-100%, 0);
     margin: 0 0 0 -16px;
     padding: 0 15px;
-
-    color: #ff5e37;
+    left: 22.7%;
+    bottom: 12%;
+    transform: translate(-100%, 0);
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
 }
 
 .main_visual .scr::before {
@@ -428,7 +434,7 @@ body {
 /*section 2*/
 .main_product {
     padding: 100px 0;
-    background: linear-gradient(-30deg, transparent 50%, #f9f9f9 50%);
+    background: linear-gradient(30deg, transparent 50%, #f9f9f9 50%);
 }
 
 .main_product .title {
@@ -438,25 +444,22 @@ body {
 
 .main_product .title h2 {
     position: relative;
-    margin: 0 0 30px 0;
-    font-size: 35px;
-    font-weight: 700;
-    color: #555;
+    margin: 0 0 40px 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
 }
 
 .main_product .title h2::before {
     content: "";
     position: absolute;
-    top: 50px;
+    top: 45px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50px;
     height: 2px;
     background: #ff5e37;
 }
-
-
-
 
 .main_product .con figure {
     position: relative;
@@ -484,13 +487,6 @@ body {
     어디서 나올지 변경 가능 */
     bottom: 30px;
 }
-
-
-
-
-
-
-
 
 .main_product .con {
     padding: 0 15px;
@@ -527,7 +523,7 @@ body {
     text-align: center;
     line-height: 32px;
     z-index: 2;
-
+    border-radius: 0 0 6px 0;
 }
 
 .main_product .con .prd img {
@@ -559,12 +555,201 @@ body {
     color: #000
 }
 
+/* main_plan */
+.main_plan {
+    padding: 100px 0;
+    background: linear-gradient(30deg, transparent 92.7%, #f9f9f9 50%);
+}
 
+.main_plan .plan_wrap {}
 
+.main_plan .plan_wrap .plan_tit {
+    text-align: center;
+}
 
+.main_plan .plan_wrap .plan_tit h2 {
+    position: relative;
+    margin: 0 0 40px 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
 
+.main_plan .plan_wrap .plan_tit h2::before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 2px;
+    background: #ff5e37;
+}
 
+.main_plan .plan_wrap .plan_box ul {
+    display: flex;
+}
 
+.main_plan .plan_wrap .plan_box ul .pimg {
+    margin: 0 0 32px 0;
+}
+
+.main_plan .plan_wrap .plan_box ul .ptxt {
+    padding: 0 10px;
+}
+
+.main_plan .plan_wrap .plan_box ul .ptxt strong {
+    display: block;
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.main_plan .plan_wrap .plan_box ul .ptxt span {
+    display: block;
+    font-size: 15px;
+    color: #888;
+}
+
+/*main_best*/
+.main_best {
+    position: relative;
+    padding: 100px 0;
+    background: #f9f9f9;
+}
+
+.main_best .title {
+    text-align: center;
+}
+
+.main_best .title h2 {
+    position: relative;
+    margin: 0 0 56px 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.main_best .title h2::before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 2px;
+    background: #ff5e37;
+}
+
+.main_best .case {
+    overflow: hidden;
+}
+
+.main_best .best_slide {
+    margin: 0 -15px
+}
+
+.main_best .best_slide figure {
+    display: flex;
+    padding: 0 15px;
+}
+
+.main_best .best_slide figure .img_box {
+    position: relative;
+    /* width: 400px; */
+    margin: 0 auto;
+}
+
+.main_best .best_slide figure .after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: none;
+}
+
+.main_best .best_slide figure .img_box:hover .after {
+
+    display: block;
+}
+
+.main_best .best_slide figure .b_txt {
+    padding: 10px 30px;
+}
+
+.main_best .best_slide figure .b_txt .prd_brand {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.main_best .best_slide figure .b_txt .prd_name {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #000;
+}
+
+.main_best .best_slide figure .b_txt .prd_price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000
+}
+
+.main_best .best_tab ul {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 40px 0;
+    font-size: 24px;
+    font-weight: 600;
+    gap: 30px;
+}
+
+.main_best .best_tab ul>* {
+    color: #ddd;
+}
+
+.main_best .best_tab ul>*.on {
+    color: #444;
+}
+
+/* 슬라이드 버튼 */
+.main_best .slick-dots {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.main_best .slick-dots li {
+    display: inline-block;
+}
+
+.main_best .slick-dots button {
+    position: relative;
+    margin: 0 5px;
+    width: 20px;
+    height: 10px;
+    transform: skew(-45deg);
+    background: #ddd;
+    font-size: 0;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* li에 slick-active가 적용되면 바뀌는 색깔 */
+.main_best .slick-dots li.slick-active button {
+    width: 60px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    transform: skew(-45deg);
+}
 
 
 

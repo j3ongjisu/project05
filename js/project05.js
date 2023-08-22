@@ -42,7 +42,7 @@ $(function () {
     });
 
     $('.main_slide').slick({
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
         speed: 1000,
         pauseOnHover: false,
@@ -71,6 +71,45 @@ $(function () {
         const st = $(this.hash).offset().top;
         console.log(st);
         $('html, body').animate({ scrollTop: st - 100 }, 600)
+    });
+
+    // .main_best에 화살표 버튼 눌러서 슬라이드 돌아가게 하기
+    $('.main_best .arrows .left').on('click', function () {
+        $('.best_slide').slick('slickPrev');
+    });
+    $('.main_best .arrows .right').on('click', function () {
+        $('.best_slide').slick('slickNext');
+    });
+
+
+    $('.best_slide').slick({
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
+
+    $('.best_tab li').on('click', function () {
+        let idx = $(this).index();
+        $('.best_slide').slick('slickGoTo', idx)
+    });
+
+    $('.best_tab li').on('click', function (event) {
+        event.preventDefault();
+        let idx = $(this).index();
+
+        $(this).addClass('on')
+            .siblings().removeClass('on');
+        $('.best_slide figure').eq(idx).addClass('on')
+            .siblings().removeClass('on');
     });
 
 
