@@ -18,9 +18,6 @@ $(function () {
 
     })
 
-
-
-
     $('.family_link2 span').on('click', function () {
         $(this).toggleClass('on');
         $(this).next().toggleClass('on');
@@ -96,6 +93,12 @@ $(function () {
         ]
     });
 
+    // 마우스로 슬라이드 넘겼을 때, 탭 메뉴 맞춰서 이동
+    $('.best_slide').on('afterChange', function (e, s, c) {
+        $('.best_tab li').eq(c).addClass('on')
+            .siblings().removeClass('on');
+    })
+
 
     $('.best_tab li').on('click', function () {
         let idx = $(this).index();
@@ -113,6 +116,43 @@ $(function () {
     });
 
 
+    $('.banner_slide').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        pauseOnHover: false,
+        fade: true,
+        arrows: false,
+    });
+
+
+    // .main_sale에 화살표 버튼 눌러서 슬라이드 돌아가게 하기
+    $('.main_sale .arrows .left').on('click', function () {
+        $('.product_slide2').slick('slickPrev');
+    });
+    $('.main_sale .arrows .right').on('click', function () {
+        $('.product_slide2').slick('slickNext');
+    });
+
+
+    $('.product_slide2').slick({
+        slidesToShow: 5,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
+    $('.family_link span').on('click', function () {
+        $(this).toggleClass('on');
+        $(this).next().toggleClass('on');
+    });
 
 
     //to_top

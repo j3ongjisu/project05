@@ -156,16 +156,9 @@ address {
 
 /* footer */
 .footer {
-    background: #333;
-    color: #fff;
     text-align: center;
 }
 
-.footer .top {
-    line-height: 80px;
-    border-bottom: 1px solid #555;
-}
-
 .footer address {
-    line-height: 80px;
+    line-height: inherit;
 }
