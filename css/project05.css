@@ -1646,6 +1646,7 @@ body {
         gap: 305px;
     }
 
+
     /* 스크롤 아래로 내리는 버튼 만들기 */
     .main_visual .scr {
         position: absolute;
@@ -1859,7 +1860,7 @@ body {
     /* main_plan */
     .main_plan {
         padding: 100px 0;
-        background: linear-gradient(30deg, transparent 95%, #f9f9f9 50%), linear-gradient(-155deg, transparent 93.4%, #f9f9f9 50%);
+        background: linear-gradient(30deg, transparent 75%, #f9f9f9 50%), linear-gradient(-145deg, transparent 72%, #f9f9f9 50%);
     }
 
     .main_plan .plan_wrap {}
@@ -1918,7 +1919,7 @@ body {
     .main_best {
         position: relative;
         padding: 100px 0;
-        background: linear-gradient(-155deg, transparent 41.5%, #f9f9f9 35%);
+        background: #f9f9f9;
     }
 
     .main_best .title {
@@ -2138,7 +2139,7 @@ body {
     .main_sale {
         position: relative;
         padding: 100px 0;
-        background: #f9f9f9;
+        background: #fff;
     }
 
     .main_sale .title {
