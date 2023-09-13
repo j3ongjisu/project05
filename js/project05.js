@@ -5,7 +5,6 @@ $(function () {
         lnk && window.open(lnk);
     });
 
-
     $(window).on('scroll', function () {
         // 변수에 스크롤한 양을 담는다.
         let sct = $(window).scrollTop();
@@ -16,7 +15,24 @@ $(function () {
             $('.header').removeClass('on')
         }
 
-    })
+    });
+
+    $('.gnb>ul>li>a').on('click', function (e) {
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+        }
+        $(this).next().stop().slideDown();
+        $(this).parent().siblings().find('.sub').stop().slideUp();
+    });
+
+    $(window).on('resize', function () {
+        $('.gnb .sub').removeAttr('style')
+    });
+
+    $('.mobile_btn').on('click', function () {
+        $(this).toggleClass('on');
+        $('.gnb').toggleClass('on');
+    });
 
     $('.family_link2 span').on('click', function () {
         $(this).toggleClass('on');
@@ -39,7 +55,7 @@ $(function () {
     });
 
     $('.main_slide').slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 5000,
         speed: 1000,
         pauseOnHover: false,
